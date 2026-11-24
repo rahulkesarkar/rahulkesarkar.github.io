@@ -227,6 +227,12 @@ h1,h2,h3,p{margin-top:0}
 .demo-step p{margin:0;font-size:11px}
 .case-footer{padding-top:24px;border-top:1px solid var(--line)}
 
+/* Case-study local demo video */
+.case-video{margin:24px 0 12px;border:1px solid var(--line);background:#000}
+.case-video-player{display:block;width:100%;height:auto;max-height: min(72vh, 760px);aspect-ratio:16/10;object-fit:contain;background:#000}
+.case-video-meta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 14px;background:var(--panel);color:var(--muted);font:9px "DM Mono",monospace;letter-spacing:.035em}
+.case-video-meta a,.case-video-note a{color:var(--accent)}
+.case-video-note{font-size:11px!important;color:var(--subtle)!important}
 /* Case-study screenshot gallery */
 .case-gallery-heading{margin-top:34px}
 .case-gallery-heading .micro-label{display:block;margin-bottom:10px}
@@ -295,6 +301,7 @@ h1,h2,h3,p{margin-top:0}
  .case-section h2{font-size:28px}
  .case-gallery{grid-template-columns:1fr}
  .case-gallery-item:last-child{grid-column:auto}
+ .case-video-meta{align-items:flex-start;flex-direction:column}
 }
 @media(prefers-reduced-motion:reduce){
  html{scroll-behavior:auto}
