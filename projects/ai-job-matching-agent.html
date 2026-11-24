@@ -61,12 +61,17 @@
         <section class="case-section" id="demo">
           <p class="eyebrow">03 / PRODUCT DEMONSTRATION</p><h2>See the application <em>working end to end.</em></h2>
           <p>The application is demonstrated as a local-running prototype, not an always-on public resume-upload service. The recorded walkthrough uses a fictional candidate resume and shows the real Streamlit application processing the PDF, extracting a candidate profile, comparing retrieval methods and analyzing a selected job.</p>
-          <div class="demo-placeholder" id="demo-video">
-            <span class="micro-label">RECORDED WALKTHROUGH · VIDEO UPLOAD PENDING</span>
-            <strong>The local application recording is complete</strong>
-            <p>The finished screen recording will be added to the project repository at <code>docs/demo/</code> and embedded here. In the meantime, the screenshots below show genuine output from the same local workflow.</p>
-            <a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/tree/main/docs/demo" target="_blank" rel="noopener noreferrer">Open the GitHub demo evidence folder ↗</a>
+          <div class="case-video" id="demo-video">
+            <video class="case-video-player" controls preload="metadata" playsinline poster="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/01-resume-upload.jpg">
+              <source src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/ai-job-matching-agent-demo.mp4" type="video/mp4">
+              Your browser does not support HTML video. <a href="https://github.com/rahulkesarkar/ai-job-matching-agent/blob/main/docs/demo/ai-job-matching-agent-demo.mp4" target="_blank" rel="noopener noreferrer">Open the MP4 on GitHub</a>.
+            </video>
+            <div class="case-video-meta">
+              <span>LOCAL APPLICATION WALKTHROUGH · 3:21 · MP4 / H.264 + AAC</span>
+              <a href="https://github.com/rahulkesarkar/ai-job-matching-agent/blob/main/docs/demo/ai-job-matching-agent-demo.mp4" target="_blank" rel="noopener noreferrer">Open video in GitHub ↗</a>
+            </div>
           </div>
+          <p class="case-video-note">Recorded from the real Streamlit application using a fictional candidate resume. The job corpus is archived, not a live vacancy feed.</p>
           <div class="case-gallery-heading" id="screenshots">
             <p class="micro-label">REAL APPLICATION CAPTURES · FICTIONAL CANDIDATE</p>
             <h3>Seven steps through the workflow</h3>
@@ -188,7 +193,7 @@
 
         <section class="case-section" id="next">
           <p class="eyebrow">13 / NEXT STEPS</p><h2>From local prototype to an <em>evidence-backed demo.</em></h2>
-          <p>The synthetic-candidate workflow has been completed locally and seven genuine application screenshots have been published with the project source and documentation. The completed screen recording is the remaining media asset to add to the repository and embed above.</p>
+          <p>The synthetic-candidate workflow has been completed locally. Seven genuine application screenshots and the 3:21 screen recording are now published with the project source and documentation.</p>
           <p>The application is intentionally not an always-on public service. Recruiters can review the local-run recording, screenshot evidence, source code, tests, technical decisions and reproducible setup instructions without uploading a resume or accessing a public backend.</p>
         </section>
         <div class="case-footer"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the complete GitHub repository <span>↗</span></a></div>
@@ -197,8 +202,9 @@
       <aside class="case-aside">
         <div class="aside-card">
           <p class="micro-label">PROJECT DEMONSTRATION</p><h3>Watch the workflow</h3>
-          <div class="demo-placeholder"><span class="micro-label">VIDEO UPLOAD PENDING</span><strong>Recorded local walkthrough</strong><p>The screen recording is complete and will be embedded here after it is added to the GitHub repository. The seven genuine screenshots are already available in this case study.</p><a class="text-link" href="#screenshots">View the screenshot gallery ↓</a></div>
-          <a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the GitHub repository <span>↗</span></a>
+          <p>Watch the complete 3:21 recording of the local application workflow, then inspect its source and implementation evidence.</p>
+          <a class="button button-primary" href="#demo-video">Watch the project demo <span>↓</span></a>
+          <a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the GitHub repository ↗</a>
         </div>
         <div class="aside-card"><p class="micro-label">PROJECT DETAILS</p><h3>At a glance</h3><p><strong>Type</strong><br>End-to-end AI/ML application</p><p style="margin-top:12px"><strong>Interface</strong><br>Streamlit</p><p style="margin-top:12px"><strong>Backend</strong><br>FastAPI</p><p style="margin-top:12px"><strong>Inference</strong><br>Sentence Transformers + local Ollama</p></div>
         <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#demo">Demonstration</a><a href="#screenshots">Screenshots</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
