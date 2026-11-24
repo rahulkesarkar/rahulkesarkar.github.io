@@ -70,7 +70,7 @@
         </section>
 
         <section class="case-section" id="architecture">
-          <p class="eyebrow">03 / SYSTEM ARCHITECTURE</p><h2>From resume upload to <em>ranked results.</em></h2>
+          <p class="eyebrow">04 / SYSTEM ARCHITECTURE</p><h2>From resume upload to <em>ranked results.</em></h2>
           <p>The application separates the user interface from the API and matching engine. Heavy model and index resources are loaded at API startup and reused for subsequent requests.</p>
           <div class="architecture">
             <div class="arch-node primary"><b>Candidate PDF</b><span>10 MB upload limit · in-memory processing</span></div><div class="arch-arrow">↓</div>
@@ -84,7 +84,7 @@
         </section>
 
         <section class="case-section" id="data">
-          <p class="eyebrow">04 / DATA ENGINEERING</p><h2>Prepare the corpus before <em>searching it.</em></h2>
+          <p class="eyebrow">05 / DATA ENGINEERING</p><h2>Prepare the corpus before <em>searching it.</em></h2>
           <p>The source is the Role Radar dataset hosted on Hugging Face. It contains 2,500 scraped job records collected on April 30 and May 1, 2026. The corpus is archived and must not be represented as currently open vacancies.</p>
           <table class="tech-table"><thead><tr><th>PIPELINE STAGE</th><th>RECORDS</th></tr></thead><tbody><tr><td>Original dataset</td><td>2,500</td></tr><tr><td>Cleaned unique jobs</td><td>2,471</td></tr><tr><td>Semantic-matching-eligible jobs</td><td>2,468</td></tr><tr><td>Generated job text chunks</td><td>10,095</td></tr></tbody></table>
           <p>Preprocessing includes location normalization, duplicate-ID removal, description-quality checks, token-length auditing, chunk generation, embedding generation, and FAISS index construction. Raw and generated datasets are excluded from the public repository.</p>
@@ -92,7 +92,7 @@
         </section>
 
         <section class="case-section" id="retrieval">
-          <p class="eyebrow">05 / RETRIEVAL ENGINEERING</p><h2>Two complementary ways to find <em>relevance.</em></h2>
+          <p class="eyebrow">06 / RETRIEVAL ENGINEERING</p><h2>Two complementary ways to find <em>relevance.</em></h2>
           <h3>TF-IDF baseline</h3><p>Scikit-learn’s TF-IDF vectorizer uses unigrams and bigrams to establish a conventional lexical retrieval baseline. Candidate and job vectors are compared using cosine similarity.</p>
           <h3>Semantic retrieval</h3><p>The embedding model is <strong>sentence-transformers/all-MiniLM-L6-v2</strong>. It produces 384-dimensional embeddings. Job descriptions are split into token-aware chunks (200 tokens with 40-token overlap), normalized, and indexed in FAISS using <strong>IndexFlatIP</strong>. For normalized vectors, inner-product ranking is equivalent to cosine similarity.</p>
           <h3>Job-level aggregation</h3><p>Each candidate chunk searches the indexed job chunks. The maximum chunk-pair similarity is retained per job, avoiding repeated job cards caused by multiple matching chunks.</p>
@@ -100,25 +100,25 @@
         </section>
 
         <section class="case-section" id="eligibility">
-          <p class="eyebrow">06 / CANDIDATE ELIGIBILITY</p><h2>Filter obvious mismatches <em>before ranking.</em></h2>
+          <p class="eyebrow">07 / CANDIDATE ELIGIBILITY</p><h2>Filter obvious mismatches <em>before ranking.</em></h2>
           <p>Eligibility rules run before both retrieval methods and pass the same eligible job set to TF-IDF and semantic ranking. The current logic considers target roles, an India location preference, experience requirements, seniority, and education evidence, including explicit equivalency conditions.</p>
           <p>These are deterministic heuristics, not a complete understanding of every employer’s requirements. An absent skill in a resume is not proof that a candidate lacks that skill. Recruiters and candidates should review the original job description and the evidence behind the result.</p>
         </section>
 
         <section class="case-section" id="llm">
-          <p class="eyebrow">07 / LLM-ASSISTED ANALYSIS</p><h2>Use AI for explanations, not <em>unchecked facts.</em></h2>
+          <p class="eyebrow">08 / LLM-ASSISTED ANALYSIS</p><h2>Use AI for explanations, not <em>unchecked facts.</em></h2>
           <p>Selected-job analysis uses Qwen3 4B through local Ollama by default. Python owns the deterministic calculations: recognized required-skill overlap, coverage, and skill gaps. The LLM provides supporting natural-language explanations.</p>
           <ul><li>Structured output is validated with Pydantic.</li><li>Unsupported-claim checks help constrain generated statements.</li><li>Invalid or unavailable LLM output triggers a deterministic fallback.</li><li>Coverage is explicit taxonomy overlap — not an overall fit score or hiring probability.</li></ul>
         </section>
 
         <section class="case-section" id="api">
-          <p class="eyebrow">08 / API & INTERFACE</p><h2>A separate API and <em>usable interface.</em></h2>
+          <p class="eyebrow">09 / API & INTERFACE</p><h2>A separate API and <em>usable interface.</em></h2>
           <table class="tech-table"><thead><tr><th>ENDPOINT</th><th>RESPONSIBILITY</th></tr></thead><tbody><tr><td>GET /health</td><td>Reports application and matching-engine readiness</td></tr><tr><td>POST /upload-resume</td><td>Extracts resume information</td></tr><tr><td>POST /match</td><td>Runs eligibility and retrieval rankings</td></tr><tr><td>POST /analyze-job</td><td>Analyzes a selected eligible job</td></tr></tbody></table>
           <p>FastAPI owns request validation and orchestration. Streamlit provides PDF upload, target-role selection, candidate evidence, eligible/excluded counts, ranking tabs, and selected-job analysis. Uploaded resume bytes are processed in memory and are not persisted by the current application.</p>
         </section>
 
         <section class="case-section" id="evaluation">
-          <p class="eyebrow">09 / EVALUATION</p><h2>Report what the evidence <em>actually says.</em></h2>
+          <p class="eyebrow">10 / EVALUATION</p><h2>Report what the evidence <em>actually says.</em></h2>
           <p>The retrieval comparison used 31 manually reviewed postings, grouped into 27 recommendation groups, with 7 relevant groups.</p>
           <table class="eval-table"><thead><tr><th>METRIC</th><th>TF-IDF</th><th>SEMANTIC</th><th>DIVERSIFIED</th></tr></thead><tbody><tr><td>Precision@5</td><td>0.6000</td><td>0.6000</td><td>0.6000</td></tr><tr><td>Precision@10</td><td>0.4000</td><td>0.4000</td><td>0.4000</td></tr><tr><td>Recall@10*</td><td>0.5714</td><td>0.5714</td><td>0.5714</td></tr><tr><td>MRR</td><td>1.0000</td><td>1.0000</td><td>1.0000</td></tr><tr><td>NDCG@10</td><td>0.7316</td><td>0.7657</td><td>0.7657</td></tr></tbody></table>
           <p><strong>*Recall is calculated within judged groups, not across the complete corpus.</strong> Semantic retrieval achieved higher NDCG@10 in this evaluation pool, but precision and recall did not improve.</p>
@@ -126,19 +126,19 @@
         </section>
 
         <section class="case-section" id="testing">
-          <p class="eyebrow">10 / TESTING & REPRODUCIBILITY</p><h2>Protect the workflow with <em>automated checks.</em></h2>
+          <p class="eyebrow">11 / TESTING & REPRODUCIBILITY</p><h2>Protect the workflow with <em>automated checks.</em></h2>
           <p>The repository documents a latest full test run of <strong>92 passed, 5 warnings</strong>. Coverage includes resume parsing and profiling, education extraction, eligibility filtering, hardware selection, LLM validation and fallback, and API behavior. The warnings are recorded as non-blocking SWIG/PyMuPDF deprecation warnings.</p>
           <p>The data-preparation script defaults to validation-only mode; rebuilding processed data, embeddings, and the FAISS index requires an explicit <code>--run</code> flag. This helps prevent accidental expensive rebuilds.</p>
           <p><a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/tree/main/tests" target="_blank" rel="noopener noreferrer">Inspect the test suite ↗</a> &nbsp; <a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read setup instructions ↗</a></p>
         </section>
 
         <section class="case-section" id="limitations">
-          <p class="eyebrow">11 / LIMITATIONS</p><h2>Known gaps, stated <em>clearly.</em></h2>
+          <p class="eyebrow">12 / LIMITATIONS</p><h2>Known gaps, stated <em>clearly.</em></h2>
           <ul><li>Archived job data is not a live vacancy feed.</li><li>OCR for scanned resumes is not implemented.</li><li>Resume extraction and eligibility rules are heuristic.</li><li>Authentication and rate limiting are not implemented.</li><li>Production deployment and load testing have not been completed.</li><li>Evaluation coverage is limited and does not establish general performance.</li><li>Third-party job-description redistribution rights have not been independently established.</li></ul>
         </section>
 
         <section class="case-section" id="next">
-          <p class="eyebrow">12 / NEXT STEPS</p><h2>From local prototype to a <em>safe public demo.</em></h2>
+          <p class="eyebrow">13 / NEXT STEPS</p><h2>From local prototype to a <em>reproducible demo.</em></h2>
           <p>The next milestone is a reproducible local demonstration: verify the application, use a clearly synthetic candidate resume, capture genuine screenshots, and record the complete workflow from PDF upload through ranked recommendations and selected-job analysis.</p>
           <p>The portfolio will present the recording and screenshots alongside the case study and GitHub source. A continuously hosted public service is deliberately out of scope for this phase; it can be evaluated separately if a future use case justifies the infrastructure and operating cost.</p>
         </section>
@@ -152,7 +152,7 @@
           <a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the GitHub repository <span>↗</span></a>
         </div>
         <div class="aside-card"><p class="micro-label">PROJECT DETAILS</p><h3>At a glance</h3><p><strong>Type</strong><br>End-to-end AI/ML application</p><p style="margin-top:12px"><strong>Interface</strong><br>Streamlit</p><p style="margin-top:12px"><strong>Backend</strong><br>FastAPI</p><p style="margin-top:12px"><strong>Inference</strong><br>Sentence Transformers + local Ollama</p></div>
-        <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
+        <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#demo">Demonstration</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
       </aside>
     </div>
   </main>
