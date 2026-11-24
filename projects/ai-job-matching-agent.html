@@ -26,7 +26,7 @@
       <p class="eyebrow">FLAGSHIP PROJECT / AI · INFORMATION RETRIEVAL</p>
       <h1>AI Job-Matching <em>Agent.</em></h1>
       <p class="project-hero-lede">An end-to-end application that turns a candidate’s resume into a structured profile, filters a job corpus using explicit eligibility rules, retrieves relevant roles with lexical and semantic search, and explains selected matches with evidence-grounded AI analysis.</p>
-      <div class="case-actions"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">View source on GitHub <span>↗</span></a><span class="case-status"><i></i> Local prototype · public demo not deployed</span></div>
+      <div class="case-actions"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">View source on GitHub <span>↗</span></a><span class="case-status"><i></i> Local prototype · recorded demo in preparation</span></div>
     </section>
 
     <section class="case-metrics section-shell" aria-label="Project metrics">
@@ -56,6 +56,17 @@
             <li>Explain selected jobs using deterministic Python calculations plus a locally hosted LLM.</li>
             <li>Expose the workflow through a FastAPI backend and Streamlit interface.</li>
           </ul>
+        </section>
+
+        <section class="case-section" id="demo">
+          <p class="eyebrow">03 / PRODUCT DEMONSTRATION</p><h2>See the application <em>working end to end.</em></h2>
+          <p>This project is demonstrated using the locally running application rather than a continuously hosted public service. The recording will use a synthetic candidate resume so no personal resume data is exposed.</p>
+          <div class="demo-placeholder">
+            <span class="micro-label">RECORDED WALKTHROUGH · IN PREPARATION</span>
+            <strong>The end-to-end product demonstration will appear here.</strong>
+            <p>Planned walkthrough: upload a sample PDF, inspect the extracted candidate profile, choose target roles, compare TF-IDF and semantic recommendations, and open a selected-job analysis.</p>
+          </div>
+          <div class="case-callout">Screenshots and video will be captured from the real local Streamlit application after the workflow has been re-verified. No mock interface or simulated recommendation output will be presented as a live result.</div>
         </section>
 
         <section class="case-section" id="architecture">
@@ -128,17 +139,17 @@
 
         <section class="case-section" id="next">
           <p class="eyebrow">12 / NEXT STEPS</p><h2>From local prototype to a <em>safe public demo.</em></h2>
-          <p>The next engineering milestone is deployment: package the API, model, and indexed corpus in a suitable host; configure a secure public origin; add request throttling and abuse protection; validate upload handling; and test the complete recruiter journey with representative PDFs.</p>
-          <p>Only after those checks pass will the portfolio embed or link to a live demo. A static page or simulated result is not a substitute for a functioning backend.</p>
+          <p>The next milestone is a reproducible local demonstration: verify the application, use a clearly synthetic candidate resume, capture genuine screenshots, and record the complete workflow from PDF upload through ranked recommendations and selected-job analysis.</p>
+          <p>The portfolio will present the recording and screenshots alongside the case study and GitHub source. A continuously hosted public service is deliberately out of scope for this phase; it can be evaluated separately if a future use case justifies the infrastructure and operating cost.</p>
         </section>
         <div class="case-footer"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the complete GitHub repository <span>↗</span></a></div>
       </article>
 
       <aside class="case-aside">
         <div class="aside-card">
-          <p class="micro-label">TRY THE PROJECT</p><h3>Interactive demo</h3>
-          <div class="demo-placeholder"><span class="micro-label">NOT YET DEPLOYED</span><strong>The live resume-matching demo is being prepared.</strong><p>The current API and Streamlit interface run locally. A public demo needs a deployed model and backend, plus upload protection and request limits.</p><span class="disabled-demo">LIVE DEMO · NOT AVAILABLE YET</span></div>
-          <a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">View code instead <span>↗</span></a>
+          <p class="micro-label">PROJECT DEMONSTRATION</p><h3>Watch the workflow</h3>
+          <div class="demo-placeholder"><span class="micro-label">RECORDING IN PREPARATION</span><strong>Real application walkthrough</strong><p>The video and screenshot gallery will be added after local end-to-end verification. Until then, the repository contains the source and reproducible setup instructions.</p></div>
+          <a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the GitHub repository <span>↗</span></a>
         </div>
         <div class="aside-card"><p class="micro-label">PROJECT DETAILS</p><h3>At a glance</h3><p><strong>Type</strong><br>End-to-end AI/ML application</p><p style="margin-top:12px"><strong>Interface</strong><br>Streamlit</p><p style="margin-top:12px"><strong>Backend</strong><br>FastAPI</p><p style="margin-top:12px"><strong>Inference</strong><br>Sentence Transformers + local Ollama</p></div>
         <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
