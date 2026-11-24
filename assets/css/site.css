@@ -65,9 +65,9 @@ h1,h2,h3,p{margin-top:0}
 .panel-topline,.panel-bottomline{display:flex;justify-content:space-between;gap:12px;color:var(--subtle);font:9px "DM Mono",monospace;letter-spacing:.09em}
 /* Warm-white contrast panels: a restrained paper tone against the dark canvas. */
 .profile-panel .panel-topline,.profile-panel .panel-bottomline{color:#58695d}
-.profile-panel .micro-label{color:var(--accent)}
+.profile-panel .micro-label{color:#58721e}
 .profile-panel .monogram{color:#17251d}
-.profile-panel .monogram span{color:var(--accent)}
+.profile-panel .monogram span{color:#58721e}
 .profile-panel .profile-caption h2{color:#17251d}
 .profile-panel .profile-caption p{color:#58695d}
 .monogram{font:800 122px/.8 "Manrope",sans-serif;letter-spacing:-.13em;color:var(--text);padding-left:12px}
@@ -113,7 +113,7 @@ h1,h2,h3,p{margin-top:0}
 .timeline-index,.edu-index{font:11px "DM Mono",monospace;color:var(--subtle)}
 .education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .education-card{position:relative;min-height:275px;padding:27px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;align-items:flex-start}
-.education-featured{background:#f2f4ec;border-color:#f2f4ec;color:#17251d}.education-featured .micro-label{color:var(--accent)}.education-featured .edu-index{color:#58695d}.education-featured h3,.education-featured .edu-speciality{color:#17251d}.education-featured .edu-institution{color:#58695d}.education-featured .edu-result span{color:#58695d}.education-featured .edu-result strong{color:var(--accent)}
+.education-featured{background:#f2f4ec;border-color:#f2f4ec;color:#17251d}.education-featured .micro-label{color:#58721e}.education-featured .edu-index{color:#58695d}.education-featured h3,.education-featured .edu-speciality{color:#17251d}.education-featured .edu-institution{color:#58695d}.education-featured .edu-result span{color:#58695d}.education-featured .edu-result strong{color:#58721e}
 .edu-top{width:100%;display:flex;align-items:center;justify-content:space-between}
 .education-card h3{margin:30px 0 0;font:800 38px "Manrope",sans-serif;letter-spacing:-.07em}
 .edu-speciality{margin:4px 0 7px;font:600 14px "Manrope",sans-serif}
