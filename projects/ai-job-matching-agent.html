@@ -26,14 +26,14 @@
       <p class="eyebrow">FLAGSHIP PROJECT / AI · INFORMATION RETRIEVAL</p>
       <h1>AI Job-Matching <em>Agent.</em></h1>
       <p class="project-hero-lede">An end-to-end application that turns a candidate’s resume into a structured profile, filters a job corpus using explicit eligibility rules, retrieves relevant roles with lexical and semantic search, and explains selected matches with evidence-grounded AI analysis.</p>
-      <div class="case-actions"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">View source on GitHub <span>↗</span></a><span class="case-status"><i></i> Local prototype · recorded demo in preparation</span></div>
+      <div class="case-actions"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">View source on GitHub <span>↗</span></a><span class="case-status"><i></i> Local prototype · not yet publicly deployed</span></div>
     </section>
 
     <section class="case-metrics section-shell" aria-label="Project metrics">
       <div class="case-metric"><strong>2,500</strong><span>source job records</span></div>
       <div class="case-metric"><strong>2,471</strong><span>cleaned unique jobs</span></div>
       <div class="case-metric"><strong>10,095</strong><span>indexed text chunks</span></div>
-      <div class="case-metric"><strong>92</strong><span>automated tests passed*</span></div>
+      <div class="case-metric"><strong>92</strong><span>tests passed in a prior run*</span></div>
     </section>
 
     <div class="case-layout section-shell">
@@ -60,7 +60,7 @@
 
         <section class="case-section" id="demo">
           <p class="eyebrow">03 / PRODUCT DEMONSTRATION</p><h2>See the application <em>working end to end.</em></h2>
-          <p>This project is demonstrated using the locally running application rather than a continuously hosted public service. The recording will use a synthetic candidate resume so no personal resume data is exposed.</p>
+          <p>The application currently runs locally and is not yet deployed as a public service. Deployment architecture and hosting feasibility remain to be validated. The recording will use a synthetic candidate resume so no personal resume data is exposed.</p>
           <div class="demo-placeholder">
             <span class="micro-label">RECORDED WALKTHROUGH · IN PREPARATION</span>
             <strong>The end-to-end product demonstration will appear here.</strong>
@@ -127,7 +127,7 @@
 
         <section class="case-section" id="testing">
           <p class="eyebrow">11 / TESTING & REPRODUCIBILITY</p><h2>Protect the workflow with <em>automated checks.</em></h2>
-          <p>The repository documents a latest full test run of <strong>92 passed, 5 warnings</strong>. Coverage includes resume parsing and profiling, education extraction, eligibility filtering, hardware selection, LLM validation and fallback, and API behavior. The warnings are recorded as non-blocking SWIG/PyMuPDF deprecation warnings.</p>
+          <p>A previous full test run recorded <strong>92 passed, 5 warnings</strong>. This is historical evidence, not a verified result for the current repository head. The suite must be rerun before the demo is recorded. The earlier warnings were reported as non-blocking SWIG/PyMuPDF deprecation warnings.</p>
           <p>The data-preparation script defaults to validation-only mode; rebuilding processed data, embeddings, and the FAISS index requires an explicit <code>--run</code> flag. This helps prevent accidental expensive rebuilds.</p>
           <p><a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/tree/main/tests" target="_blank" rel="noopener noreferrer">Inspect the test suite ↗</a> &nbsp; <a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/blob/main/README.md" target="_blank" rel="noopener noreferrer">Read setup instructions ↗</a></p>
         </section>
@@ -138,9 +138,9 @@
         </section>
 
         <section class="case-section" id="next">
-          <p class="eyebrow">13 / NEXT STEPS</p><h2>From local prototype to a <em>reproducible demo.</em></h2>
-          <p>The next milestone is a reproducible local demonstration: verify the application, use a clearly synthetic candidate resume, capture genuine screenshots, and record the complete workflow from PDF upload through ranked recommendations and selected-job analysis.</p>
-          <p>The portfolio will present the recording and screenshots alongside the case study and GitHub source. A continuously hosted public service is deliberately out of scope for this phase; it can be evaluated separately if a future use case justifies the infrastructure and operating cost.</p>
+          <p class="eyebrow">13 / NEXT STEPS</p><h2>From local prototype to a <em>deployed, verified demo.</em></h2>
+          <p>The next milestones are to rerun the full test suite, verify the local workflow, validate a suitable deployment architecture for the API, retrieval artifacts and LLM inference, and test the real hosted application. Then use a clearly synthetic candidate resume to capture genuine screenshots and record the complete workflow from PDF upload through ranked recommendations and selected-job analysis.</p>
+          <p>The portfolio will present the recording and screenshots alongside the case study and GitHub source. The deployed application link will be added only after the hosted workflow has been validated. Hosting cost, availability, cold starts and inference latency must be measured rather than assumed.</p>
         </section>
         <div class="case-footer"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the complete GitHub repository <span>↗</span></a></div>
       </article>
