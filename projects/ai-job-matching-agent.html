@@ -60,13 +60,62 @@
 
         <section class="case-section" id="demo">
           <p class="eyebrow">03 / PRODUCT DEMONSTRATION</p><h2>See the application <em>working end to end.</em></h2>
-          <p>The application is intentionally demonstrated as a local-running prototype, not an always-on public resume-upload service. Recruiters can inspect the source, genuine screenshots and a recorded video of the real application running locally. No public backend or recruiter resume upload is required. The recording uses a synthetic candidate resume.</p>
-          <div class="demo-placeholder">
-            <span class="micro-label">RECORDED WALKTHROUGH · TO BE ADDED</span>
-            <strong>Real local application walkthrough</strong>
-            <p>The GitHub repository will contain a recording of the actual application running locally: synthetic PDF upload, candidate extraction, retrieval comparison and selected-job AI analysis.</p>
+          <p>The application is demonstrated as a local-running prototype, not an always-on public resume-upload service. The recorded walkthrough uses a fictional candidate resume and shows the real Streamlit application processing the PDF, extracting a candidate profile, comparing retrieval methods and analyzing a selected job.</p>
+          <div class="demo-placeholder" id="demo-video">
+            <span class="micro-label">RECORDED WALKTHROUGH · VIDEO UPLOAD PENDING</span>
+            <strong>The local application recording is complete</strong>
+            <p>The finished screen recording will be added to the project repository at <code>docs/demo/</code> and embedded here. In the meantime, the screenshots below show genuine output from the same local workflow.</p>
+            <a class="text-link" href="https://github.com/rahulkesarkar/ai-job-matching-agent/tree/main/docs/demo" target="_blank" rel="noopener noreferrer">Open the GitHub demo evidence folder ↗</a>
           </div>
-          <div class="case-callout">Screenshots and video will be captured from the real local Streamlit application after the workflow has been re-verified. No mock interface or simulated recommendation output will be presented as a live result.</div>
+          <div class="case-gallery-heading" id="screenshots">
+            <p class="micro-label">REAL APPLICATION CAPTURES · FICTIONAL CANDIDATE</p>
+            <h3>Seven steps through the workflow</h3>
+            <p>These screenshots were captured from the local Streamlit application. They are not mock-ups; the job corpus shown is archived rather than a live vacancy feed.</p>
+          </div>
+          <div class="case-gallery">
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/01-resume-upload.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: Resume upload">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/01-resume-upload.jpg" alt="Resume upload: Uploading the fictional candidate's PDF resume." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>01 / Resume upload</strong><span>Uploading the fictional candidate's PDF resume.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/02-candidate-profile.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: Candidate profile">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/02-candidate-profile.jpg" alt="Candidate profile: Structured skills, education and candidate evidence extracted from the resume." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>02 / Candidate profile</strong><span>Structured skills, education and candidate evidence extracted from the resume.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/03-tfidf-recommendations.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: TF-IDF recommendations">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/03-tfidf-recommendations.jpg" alt="TF-IDF recommendations: Traditional lexical retrieval results." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>03 / TF-IDF recommendations</strong><span>Traditional lexical retrieval results.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/04-semantic-recommendations.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: Semantic recommendations">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/04-semantic-recommendations.jpg" alt="Semantic recommendations: Embedding-based retrieval results using Sentence Transformers and FAISS." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>04 / Semantic recommendations</strong><span>Embedding-based retrieval results using Sentence Transformers and FAISS.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/05-diversified-recommendations.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: Diversified recommendations">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/05-diversified-recommendations.jpg" alt="Diversified recommendations: Near-duplicate-aware semantic recommendation results." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>05 / Diversified recommendations</strong><span>Near-duplicate-aware semantic recommendation results.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/06-ai-job-analysis.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: AI job analysis">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/06-ai-job-analysis.jpg" alt="AI job analysis: Selected-job skill matches, skill gaps and local LLM-assisted explanation." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>06 / AI job analysis</strong><span>Selected-job skill matches, skill gaps and local LLM-assisted explanation.</span></figcaption>
+            </figure>
+            <figure class="case-gallery-item">
+              <a href="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/07-supporting-evidence.jpg" target="_blank" rel="noopener noreferrer" aria-label="Open full-size screenshot: Supporting evidence">
+                <img src="https://raw.githubusercontent.com/rahulkesarkar/ai-job-matching-agent/main/docs/demo/screenshots/07-supporting-evidence.jpg" alt="Supporting evidence: Candidate resume evidence alongside supporting job-description evidence." loading="lazy" decoding="async">
+              </a>
+              <figcaption><strong>07 / Supporting evidence</strong><span>Candidate resume evidence alongside supporting job-description evidence.</span></figcaption>
+            </figure>
+          </div>
         </section>
 
         <section class="case-section" id="architecture">
@@ -139,8 +188,8 @@
 
         <section class="case-section" id="next">
           <p class="eyebrow">13 / NEXT STEPS</p><h2>From local prototype to an <em>evidence-backed demo.</em></h2>
-          <p>The next milestones are to rerun the full test suite on the development Mac, verify the complete local workflow, expand the relevance evaluation, and use a clearly synthetic candidate resume to capture genuine screenshots and record the complete workflow from PDF upload through ranked recommendations and selected-job analysis.</p>
-          <p>The portfolio will present the recording and screenshots alongside the case study and GitHub source. The application is intentionally not an always-on public service: recruiters will verify it through the real local-run recording, screenshots, source code and reproducible setup instructions.</p>
+          <p>The synthetic-candidate workflow has been completed locally and seven genuine application screenshots have been published with the project source and documentation. The completed screen recording is the remaining media asset to add to the repository and embed above.</p>
+          <p>The application is intentionally not an always-on public service. Recruiters can review the local-run recording, screenshot evidence, source code, tests, technical decisions and reproducible setup instructions without uploading a resume or accessing a public backend.</p>
         </section>
         <div class="case-footer"><a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the complete GitHub repository <span>↗</span></a></div>
       </article>
@@ -148,11 +197,11 @@
       <aside class="case-aside">
         <div class="aside-card">
           <p class="micro-label">PROJECT DEMONSTRATION</p><h3>Watch the workflow</h3>
-          <div class="demo-placeholder"><span class="micro-label">RECORDING IN PREPARATION</span><strong>Real application walkthrough</strong><p>The genuine video and screenshot gallery will be added after local end-to-end verification. The repository provides the source and reproducible setup instructions.</p></div>
+          <div class="demo-placeholder"><span class="micro-label">VIDEO UPLOAD PENDING</span><strong>Recorded local walkthrough</strong><p>The screen recording is complete and will be embedded here after it is added to the GitHub repository. The seven genuine screenshots are already available in this case study.</p><a class="text-link" href="#screenshots">View the screenshot gallery ↓</a></div>
           <a class="button button-primary" href="https://github.com/rahulkesarkar/ai-job-matching-agent" target="_blank" rel="noopener noreferrer">Explore the GitHub repository <span>↗</span></a>
         </div>
         <div class="aside-card"><p class="micro-label">PROJECT DETAILS</p><h3>At a glance</h3><p><strong>Type</strong><br>End-to-end AI/ML application</p><p style="margin-top:12px"><strong>Interface</strong><br>Streamlit</p><p style="margin-top:12px"><strong>Backend</strong><br>FastAPI</p><p style="margin-top:12px"><strong>Inference</strong><br>Sentence Transformers + local Ollama</p></div>
-        <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#demo">Demonstration</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
+        <div class="aside-card"><p class="micro-label">ON THIS PAGE</p><nav class="case-nav" aria-label="Case study sections"><a href="#problem">Problem</a><a href="#goals">Objectives</a><a href="#demo">Demonstration</a><a href="#screenshots">Screenshots</a><a href="#architecture">Architecture</a><a href="#data">Data engineering</a><a href="#retrieval">Retrieval</a><a href="#eligibility">Eligibility</a><a href="#llm">LLM analysis</a><a href="#api">API & UI</a><a href="#evaluation">Evaluation</a><a href="#testing">Testing</a><a href="#limitations">Limitations</a><a href="#next">Next steps</a></nav></div>
       </aside>
     </div>
   </main>
